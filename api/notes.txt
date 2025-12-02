@@ -1,0 +1,32 @@
+Legacy Channels
+
+// //russian comedy
+    // "@serenityover9000",
+    // //places channels
+    // "@Droview",
+    // "@LetsTourEarth",
+    // // "@Stunning_Space1",
+    // //travel and tourism channels
+    // "@TayoAinaFilms",
+    // //aviation channels
+    // // "@Crazy_aviation",
+    // "@aviatestudios", // Add more YouTube channel usernames as needed
+    // "@nooraviation",
+    // // "@RoboBuddy-v2p",
+    // //comedy channels
+    // "@yessjamal",
+    // "@junya1gou",
+    // "@khabylame",
+    // // "@FARUK_KHAN-CR7",
+    // //health and fitness channels
+    // //food channels
+    // "@theeverydayrecipe7827",
+    // "@Kikifoodies",
+    // "@Ifyskitchen",
+    // "@feelgoodfoodie",
+    // //finance channels
+    // "@onuhawisdom",
+    // //dance channels
+    // "@mattsdance",
+    // //cars  channels
+    // "@kuangyefeichipub",

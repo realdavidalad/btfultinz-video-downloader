@@ -1,0 +1,35 @@
+2. Using Task Scheduler (More Reliable)
+
+This allows you to run at system startup (before login) or on user logon.
+
+Steps:
+
+Open Task Scheduler (Win + S → search Task Scheduler).
+
+Click Create Task (not "Basic Task").
+
+Under General:
+
+Give it a name (e.g., "Run Node Script").
+
+Select "Run whether user is logged on or not" if you want it to run in background.
+
+Check "Run with highest privileges" (avoids permission issues).
+
+Under Triggers → New:
+
+Choose At log on (or At startup if you want it even before login).
+
+Under Actions → New:
+
+Action: Start a program.
+
+Program/script: node
+
+Add arguments: index.js
+
+Start in: C:\path\to\your\project
+
+Save → Enter your password if prompted.
+
+✅ This will run your Node.js script every time Windows boots/logs in.

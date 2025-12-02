@@ -288,60 +288,73 @@ const GetYouTubeChannelShortVideoIds = async (channelUrl) => {
   }
 };
 
+
+
+
+//main function
+
 (async () => {
+
+  //delete the previous post videos
+  const videosFolder = path.join(__dirname, "btfultinztopost");
+  try {
+    const files = await fs.promises.readdir(videosFolder);
+    for (const file of files) {
+      await fs.promises.unlink(path.join(videosFolder, file));
+  }
+  } catch (e) {
+    // do nothing
+  }
+
+
+  //wait for 30 secs to sync delete operation with google drive
+  // await new Promise((resolve) => setTimeout(resolve, 30000));
+
+
+
+  // Ensure the videos folder exists
+  await fs.promises.mkdir(videosFolder, { recursive: true });
+
+
   //section 0
   const youTubeChannelUsernameList = [
+    //advertisement
+    //induction cooker by Fabikun Retails
+    "invisacook",
+    //affiliate marketing by 
+    
     //Comedy
-    "@WorldLuxury03",
-    "@AbsurdVideos-c5y",
-    "@botsabha",
-    "@Arbaxyz",
-    "@sai-sam",
-    "@funny12466",
-    "@DrôleFacts-1",
-    "@simple_putin",
-    "@TwinsFromRussiaRevega",
-    "@ricoanimations0",
-    "@afv",
-    "@EvaandJavier",
+    
+    // "ValuetainmentComedy",
+    // "@Trend_Flare_Vibes",
+    // "@WorldLuxury03",
+    // "@AbsurdVideos-c5y",
+    // "@botsabha",
+    // "@Arbaxyz",
+    // "@sai-sam",
+    // "@funny12466",
+    // "@DrôleFacts-1",
+    // "@simple_putin",
+    // "@TwinsFromRussiaRevega",
+    // "@ricoanimations0",
+    // "@afv",
+    // "@EvaandJavier",
     "@yessjamal",
     "@junya1gou",
     "@khabylame",
     "@serenityover9000",
     "@lukedavidson81",
     "@aimade4u",
+    "@Baby_Podcast_Diva",
+    "@DiaperDiplomacy",
+    "@crazysome",
+    "@funnygroup.9166",
+    "@jjzh5810",
+    "@thecutestbabyai"
+    
 
-    // //russian comedy
-    // "@serenityover9000",
-    // //places channels
-    // "@Droview",
-    // "@LetsTourEarth",
-    // // "@Stunning_Space1",
-    // //travel and tourism channels
-    // "@TayoAinaFilms",
-    // //aviation channels
-    // // "@Crazy_aviation",
-    // "@aviatestudios", // Add more YouTube channel usernames as needed
-    // "@nooraviation",
-    // // "@RoboBuddy-v2p",
-    // //comedy channels
-    // "@yessjamal",
-    // "@junya1gou",
-    // "@khabylame",
-    // // "@FARUK_KHAN-CR7",
-    // //health and fitness channels
-    // //food channels
-    // "@theeverydayrecipe7827",
-    // "@Kikifoodies",
-    // "@Ifyskitchen",
-    // "@feelgoodfoodie",
-    // //finance channels
-    // "@onuhawisdom",
-    // //dance channels
-    // "@mattsdance",
-    // //cars  channels
-    // "@kuangyefeichipub",
   ];
+
 
   for (const username of youTubeChannelUsernameList) {
     try {
@@ -363,7 +376,10 @@ const GetYouTubeChannelShortVideoIds = async (channelUrl) => {
         ]; // Pick a random video ID excluding the last element
       const videoUrl = "https://www.youtube.com/watch?v=" + videoId; // Construct the video URL
 
+
+      //download the video using yt1d.com
       const videoDetails = await getVideoDataFromYt1d(videoUrl, videoId);
+    
 
       // console.log(videoUrl);
 
@@ -389,4 +405,5 @@ const GetYouTubeChannelShortVideoIds = async (channelUrl) => {
       console.error(`Error processing channel ${username}:`, error.message);
     }
   }
+
 })();
